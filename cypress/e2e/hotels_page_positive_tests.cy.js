@@ -1,6 +1,6 @@
 ///<reference types ="Cypress"/>
 
-describe('Hotel page test', () => {
+describe('Positive tests: Jerusalem, London, and New York are on the list, and a search in these cities is working', () => {
   const hotel_page = ('https://www.accesstravel.com/en-US/Hotel/List')
   const CheckIn = ('[name ="Filter.CheckIn"]')
   const search_button = ('.form-centered > .btn')
@@ -51,9 +51,6 @@ it('Should display New York a search in this city is working', () => {
   cy.get('[name ="Filter.CheckOut"]').clear().type("2025-01-30")
   cy.get('.form-centered > .btn').click()
   cy.go('back')
-
-
-
 
 
 })
