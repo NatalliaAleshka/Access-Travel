@@ -8,7 +8,7 @@ describe('Main page categories and menu options', () => {
   const guides_page = ('https://www.accesstravel.com/en-US/Guide/List?DestinationId=2');
   const tours_page = ('https://www.accesstravel.com/en-US/Tour/List?DestinationId=2')
   const things_to_do_page = ('https://www.accesstravel.com/en-US');
-  
+
 
   before(() => {
     cy.visit('https://www.accesstravel.com/en-US/Home/Index')
