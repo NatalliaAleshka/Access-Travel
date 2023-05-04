@@ -9,7 +9,6 @@ describe('Positive tests: Jerusalem, London, and New York are on the list, and a
 
   beforeEach(() => {
     cy.visit(hotel_page)
-
   })
 
   it('Verify Destination box', () => {
@@ -21,12 +20,10 @@ describe('Positive tests: Jerusalem, London, and New York are on the list, and a
   it('Should display Jerusalem and a search in this city is working ', () => {
     cy.get(Destination_box).should('contain', 'Jerusalem');
     cy.get(Destination_box).select('Jerusalem')
-    cy.get(CheckIn).should("be.visible")
     cy.get(CheckIn).clear().type("2023-11-11")
-    cy.get(CheckOut).should("be.visible")
     cy.get(CheckOut).clear().type("2023-11-30")
     cy.get(Search_button).click()
-    cy.go('back')
+    cy.get('[class ="product-listing container"]').should("be.visible")
 
   })
 
@@ -34,29 +31,22 @@ describe('Positive tests: Jerusalem, London, and New York are on the list, and a
   it('Should display London a search in this city is working', () => {
     cy.get(Destination_box).should('contain', 'London');
     cy.get(Destination_box).select('London')
-    cy.get(CheckIn).should("be.visible")
-    cy.get(CheckIn).clear().type("2023-12-30")
-    cy.get(CheckOut).should("be.visible")
-    cy.get(CheckOut).clear().type("2024-01-30")
+    cy.get(CheckIn).clear().type("2023-06-30")
+    cy.get(CheckOut).clear().type("2023-07-05")
     cy.get(Search_button).click()
-    cy.go('back')
-
+    cy.get('[class ="product-listing container"]').should("be.visible")
 
   })
 
   it('Should display New York a search in this city is working', () => {
     cy.get(Destination_box).should('contain', 'New York');
     cy.get(Destination_box).select('New York')
-    cy.get(CheckIn).should("be.visible")
-    cy.get(CheckIn).clear().type("2024-12-30")
-    cy.get(CheckOut).should("be.visible")
-    cy.get(CheckOut).clear().type("2025-01-30")
+    cy.get(CheckIn).clear().type("2023-07-10")
+    cy.get(CheckOut).clear().type("2023-07-20")
     cy.get(Search_button).click()
-    cy.go('back')
-
+    cy.get('[class ="product-listing container"]').should("be.visible")
 
   })
-
 
 })
 
